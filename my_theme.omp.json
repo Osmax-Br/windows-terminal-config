@@ -1,0 +1,74 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "leading_diamond": "\ue0b6",
+          
+          "foreground": "#00C6F7",
+          "background": "#272727",
+          
+          "template": "\ue5ff {{ .Location }} ",
+          "type": "path",
+          "style": "diamond",
+          "properties": {
+            "style": "agnoster_short" ,
+            "max_depth" : 5
+            //"home_icon" : " C:\\Users\\Osama Br"
+          },
+          "trailing_diamond": "\ue0b4 "
+          
+          
+        },
+        {
+          "leading_diamond": "\ue0b6",
+          "foreground": "#ee79d1",
+          "background" : "#272727",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "diamond",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git",
+          "trailing_diamond": "\ue0b4 "
+        },
+        {
+          "type": "executiontime",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "foreground": "#bc93ff",
+          "background": "#272727",
+          "template": " <#bc93ff></> {{ .FormattedMs }} ",
+          "properties": {
+            "threshold": 500,
+            "style": "roundrock",
+            "always_enabled": true
+          },
+          "trailing_diamond": "\ue0b4 "
+        }
+      ],
+      "type": "prompt"
+    },
+    
+    {
+      "newline" : true ,
+      "alignment": "left",
+      "segments": [{
+          
+        "foreground": "#42f5c5",
+        "style": "plain",
+        "template": "\u276f ",
+        "type": "text"
+      }],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
